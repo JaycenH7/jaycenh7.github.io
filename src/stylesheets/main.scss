@@ -1,0 +1,146 @@
+
+/*------------------------*\
+  #VARS
+\*------------------------*/
+
+$mobileWidth: 480px;
+$tabletWidth: 768px;
+
+// Google Fonts
+// http://www.google.com/fonts#UsePlace:use/Collection:Source+Sans+Pro:200italic|Oswald|Open+Sans:300,600
+$font: 300 medium 'Open Sans', Helvetica , sans-serif;
+$linkFont: 600 medium 'Open Sans', Helvetica , sans-serif;
+$headerFont: 400 medium 'Oswald', Helvetica, sans-serif;
+$thinFont: italic 200 medium 'Source Sans Pro', Helvetica, sans-serif;
+
+// Colors
+$textColor: #1F282D;
+$secondaryTextColor: #1F282D;
+$linkColor: #77BED2;
+$accentColor: #64729c;
+$bgColor: #JF1F1F1;
+
+/*------------------------*\
+  #STYLES
+\*------------------------*/
+
+html, body {
+  font-size: 15px;
+  font: $font;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: $bgColor;
+  color: $textColor;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $linkColor;
+  font: $linkFont;
+  font-size: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body > * {
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 5%;
+}
+
+.section {
+  position: relative;
+  height: 100%;
+}
+
+
+/*------------------------*\
+  #NAVIGATION
+\*------------------------*/
+
+.nav {
+  z-index: 1000;
+  position: fixed;
+  display: table;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 5%;
+  font-size: 0.8rem;
+
+  & > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .nav-actions {
+    text-align: right;
+
+    a {
+      padding-top: 10px;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.hero {
+  position: absolute;
+  top: 40%;
+}
+
+.motto {
+
+  & > * {
+    display: table-cell;
+
+    @media only screen and (max-width: $mobileWidth) {
+      display: table-row;
+    }
+  }
+
+  .tagline {
+    color: $accentColor;
+    font: $headerFont;
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    @media not screen and (max-width: $mobileWidth) {
+      padding-left: 0.7em;
+    }
+  }
+}
+
+.description {
+  font: $thinFont;
+  color: $secondaryTextColor;
+  margin-top: 0.3em;
+}
+
+.links {
+  font-size: 0.8rem;
+  margin-top: 20px;
+
+  a {
+    padding-top: 10px;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
